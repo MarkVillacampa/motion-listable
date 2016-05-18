@@ -1,0 +1,27 @@
+GIT
+  remote: git://github.com/adorechic/motion-stump.git
+  revision: 175808e397ab642d5a8f1b240dc01d61e0a96c5d
+  branch: clear_stub
+  specs:
+    motion-stump (0.3.2)
+
+PATH
+  remote: .
+  specs:
+    motion-ios-table (1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    rake (11.1.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  motion-ios-table!
+  motion-stump!
+  rake
+
+BUNDLED WITH
+   1.11.2
