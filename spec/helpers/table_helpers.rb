@@ -6,6 +6,6 @@ end
 
 class UITableView
   def cell_at_index(index)
-    cellForRowAtIndexPath(index.to_index_path)
+    cellForRowAtIndexPath(index.to_index)
   end
 end

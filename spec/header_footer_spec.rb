@@ -4,21 +4,21 @@ describe "Headers and footers" do
       sections: [
         {
           header_view: UIView.new.tap do |view|
-            view.frame = [[0,0],[0,50]]
+            view.frame = [[0, 0], [0, 50]]
             view.backgroundColor = UIColor.redColor
             view.accessibilityLabel = "header_view"
           end,
           header_height: 50,
           footer_view: UIView.new.tap do |view|
-            view.frame = [[0,0],[0,50]]
+            view.frame = [[0, 0], [0, 50]]
             view.backgroundColor = UIColor.redColor
             view.accessibilityLabel = "footer_view"
           end,
           footer_height: 50,
           cells: [
             {
-              textLabel: { text: "Hello World" },
-            },
+              textLabel: { text: "Hello World" }
+            }
           ]
         },
         {
@@ -26,8 +26,8 @@ describe "Headers and footers" do
           footer_title: "Section Footer Title",
           cells: [
             {
-              textLabel: { text: "Hello World" },
-            },
+              textLabel: { text: "Hello World" }
+            }
           ]
         }
       ]

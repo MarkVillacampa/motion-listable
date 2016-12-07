@@ -1,0 +1,79 @@
+# inherit_from: .rubocop_todo.yml
+
+# Custom .rubocop.yml file for use with Rubymotion projects
+# based on this blog post:
+# http://qiita.com/watson1978/items/debafdfc49511fb173e9
+#
+AllCops:
+  Exclude:
+    - '**/Rakefile' # exclude the Rakefile
+
+# Disable to check whether method name use camel case
+# in order to allow ObjectiveC method overwrites
+MethodName:
+  Enabled: false
+
+# disable to check whether lines are less than 80 characters.
+Metrics/LineLength:
+  Enabled: false
+
+# disable ABCSize metric
+Metrics/AbcSize:
+  Enabled: false
+
+# Change maximum method length to 25
+Metrics/MethodLength:
+  Enabled: true
+  Max: 25
+
+# Disable UnusedMethodArgument cop which wrongly
+# reports cocoa methods with named arguments like
+# def outlineView(_outlineView, viewForTableColumn:table_column, item:item)
+Lint/UnusedMethodArgument:
+  Enabled: false
+
+# same as UnusedBlockArgument but for blocks
+Lint/UnusedBlockArgument:
+  Enabled: false
+
+# Change this to false to not check for duplicate methods
+Lint/DuplicateMethods:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/RedundantSelf:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/AlignParameters:
+  Enabled: false
+
+Style/SpaceAfterColon:
+  Enabled: false
+
+Performance/RedundantBlockCall:
+  Enabled: false
+
+Style/VariableName:
+  Enabled: false
+
+Lint/Void:
+  Exclude:
+    - 'spec/**/*.rb'
+
+Style/MutableConstant:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Exclude:
+    - 'lib/motion-ios-table/table_helper.rb'
+
+Style/FileName:
+  Enabled: false

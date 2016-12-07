@@ -6,10 +6,9 @@ Gem::Specification.new do |spec|
   spec.version       = VERSION
   spec.authors       = ["Mark Villacampa"]
   spec.email         = ["m@markvillacampa.com"]
-  spec.description   = %q{Write a gem description}
-  spec.summary       = %q{Write a gem summary}
-  spec.homepage      = ""
-  spec.license       = ""
+  spec.description   = "Easily configure iOS table views using a hash."
+  spec.summary       = "Easily configure iOS table views using a hash."
+  spec.license       = "MIT"
 
   files = []
   files << 'README.md'

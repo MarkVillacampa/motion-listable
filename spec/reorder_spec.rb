@@ -11,7 +11,7 @@ describe "Reordering cells" do
         },
         {
           cells: [
-            { textLabel: { text: "Non-movable cell" }, }
+            { textLabel: { text: "Non-movable cell" } }
           ]
         }
       ]
@@ -23,10 +23,9 @@ describe "Reordering cells" do
   tests TableViewController
 
   it "shows reorder controls only for configured sections" do
-    cell = controller.tableView.cell_at_index([0,0])
-    cell.showsReorderControl.should ==  true
-    cell = controller.tableView.cell_at_index([1,0])
-    cell.showsReorderControl.should ==  false
-    wait 3 {}
+    cell = controller.tableView.cell_at_index([0, 0])
+    cell.showsReorderControl.should == true
+    cell = controller.tableView.cell_at_index([1, 0])
+    cell.showsReorderControl.should == false
   end
 end
