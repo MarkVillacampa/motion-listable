@@ -1,5 +1,5 @@
 class TableViewController < UITableViewController
-  include MotionIOSTable::TableHelper
+  include MotionListable::TableHelper
 
   attr_accessor :data_source
 end

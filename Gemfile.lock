@@ -8,7 +8,7 @@ GIT
 PATH
   remote: .
   specs:
-    motion-ios-table (1.0)
+    motion-listable (1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -19,7 +19,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  motion-ios-table!
+  motion-listable!
   motion-stump!
   rake
 

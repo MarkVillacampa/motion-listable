@@ -1,4 +1,4 @@
-module MotionIOSTable
+module MotionListable
   module TableHelper
     def data_source
       {}
@@ -28,7 +28,16 @@ module MotionIOSTable
         data = self.sections[indexPath.section][:cells][indexPath.row]
         default_cell_style.deep_merge(data)
       end
-      cell.send(symbol, cell_data, cell, indexPath) if cell.respond_to?(symbol)
+      if cell.respond_to?(symbol)
+        case cell.method(symbol).arity
+        when -1, 3
+          cell.send(symbol, cell_data, cell, indexPath)
+        when 0
+          cell.send(symbol)
+        else
+          raise ArgumentError, "method '#{symbol}' must accept either 3 arguments (cell_data, cell, indexPath) or no arguments."
+        end
+      end
       self.send(symbol, cell_data, cell, indexPath) if self.respond_to?(symbol)
       action = cell_data[symbol]
       return unless action
