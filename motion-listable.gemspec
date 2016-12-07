@@ -1,9 +1,8 @@
 # -*- encoding: utf-8 -*-
-VERSION = "1.0"
 
 Gem::Specification.new do |spec|
   spec.name          = "motion-listable"
-  spec.version       = VERSION
+  spec.version       = "0.0.1"
   spec.authors       = ["Mark Villacampa"]
   spec.email         = ["m@markvillacampa.com"]
   spec.description   = "Easily configure iOS table views using a hash."
