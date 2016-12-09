@@ -44,7 +44,14 @@ module MotionListable
       if action.is_a?(Proc)
         action.call(cell_data, cell, indexPath)
       elsif self.respond_to?(action)
-        self.send(action, cell_data, cell, indexPath)
+        case self.method(action).arity
+        when -1, 3
+          self.send(action, cell_data, cell, indexPath)
+        when 0
+          self.send(action)
+        else
+          raise ArgumentError, "method '#{symbol}' must accept either 3 arguments (cell_data, cell, indexPath) or no arguments."
+        end
       end
     end
     private :action
