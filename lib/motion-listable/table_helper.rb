@@ -86,9 +86,9 @@ module MotionListable
       callback(tableView, indexPath, :on_display, cell, true)
     end
 
-    def tableView(tableView, didEndDisplayingCell:cell, forRowAtIndexPath:indexPath)
-      callback(tableView, indexPath, :on_end_display, cell, true)
-    end
+    # def tableView(tableView, didEndDisplayingCell:cell, forRowAtIndexPath:indexPath)
+    #   callback(tableView, indexPath, :on_end_display, cell, true)
+    # end
 
     # TODO: Implement footer/header display callbacks if someone requests it
     # def tableView(tableView, willDisplayHeaderView:view, forSection:section)
