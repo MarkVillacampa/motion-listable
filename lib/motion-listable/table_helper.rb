@@ -42,7 +42,14 @@ module MotionListable
       action = cell_data[symbol]
       return unless action
       if action.is_a?(Proc)
-        action.call(cell_data, cell, indexPath)
+        case action.arity
+        when -1, 3
+          action.call(cell_data, cell, indexPath)
+        when 0
+          action.call
+        else
+          raise ArgumentError, "proc for index path [#{indexPath.section}, #{indexPath.row}] must accept either 3 arguments (cell_data, cell, indexPath) or no arguments."
+        end
       elsif self.respond_to?(action)
         case self.method(action).arity
         when -1, 3
