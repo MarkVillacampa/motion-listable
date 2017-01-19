@@ -159,11 +159,13 @@ module MotionListable
     # def tableView(tableView, shouldHighlightRowAtIndexPath:indexPath)
     # end
 
-    # def tableView(tableView, didHighlightRowAtIndexPath:indexPath)
-    # end
+    def tableView(tableView, didHighlightRowAtIndexPath:indexPath)
+      callback(tableView, indexPath, :on_highlight)
+    end
 
-    # def tableView(tableView, didUnhighlightRowAtIndexPath:indexPath)
-    # end
+    def tableView(tableView, didUnhighlightRowAtIndexPath:indexPath)
+      callback(tableView, indexPath, :on_unhighlight)
+    end
 
     # If nil is returned, the cell is not selected.
     # If a different index path is returned, the cell at that index path is selected instead.
