@@ -113,7 +113,7 @@ module MotionListable
     # Variable height support
 
     def tableView(tableView, heightForRowAtIndexPath:indexPath)
-      sections[indexPath.section][:cells][indexPath.row][:height] || UITableViewAutomaticDimension
+      sections[indexPath.section][:cells][indexPath.row][:height] || default_cell_style[:height] || UITableViewAutomaticDimension
     end
 
     def tableView(tableView, heightForHeaderInSection:section)
